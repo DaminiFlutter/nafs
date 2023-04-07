@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
 import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/relationshipStatus.dart';
+import 'package:nafs/screens/Guest_Sign_In/sleepinghabits.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'identistatus.dart';
+import 'nationalityStatus.dart';
 
-class GenderIdentity extends StatefulWidget {
-  const GenderIdentity({super.key});
+class PreferenceTherapist extends StatefulWidget {
+  const PreferenceTherapist({super.key});
 
   @override
-  State<GenderIdentity> createState() => _GenderIdentityState();
+  State<PreferenceTherapist> createState() => _ReligiousStatusState();
 }
 
-class _GenderIdentityState extends State<GenderIdentity> {
-  var selectedGender = 'Man';
+class _ReligiousStatusState extends State<PreferenceTherapist> {
+  var selectedGender = 'Male or Female';
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +42,23 @@ class _GenderIdentityState extends State<GenderIdentity> {
                         Get.back();
                       },
                       child: SvgPicture.asset("assets/login/arrow-left.svg")),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 3.h,
-                      ),
                       Text(
-                        "What is your gender identity?",
+                        "Are there any specific preferences for your  therapist ?",
                         softWrap: true,
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.start,
                         style: DataConstants.commonTextStyle(
                             weight: FontWeight.bold,
                             fontSize: DataConstants.twentyFour,
                             color: DataConstants.blackColor),
                       ),
                       Text(
-                        "Select Your Gender",
+                        "Choose your preference",
                         softWrap: true,
                         textAlign: TextAlign.center,
                         style: DataConstants.commonTextStyle(
@@ -73,60 +75,92 @@ class _GenderIdentityState extends State<GenderIdentity> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender = 'Man';
+                        selectedGender = 'Male or Female';
                       });
                     },
                     child: Container(
-                      width: 100.w,
                       margin: EdgeInsets.only(bottom: 2.h),
-                      alignment: Alignment.center,
-                      height: 6.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
-                          color: selectedGender == 'Man'
+                          color: selectedGender == 'Male or Female'
                               ? DataConstants.blueColor
                               : Color(0xffe4e4e4)),
-                      child: Text(
-                        "Man",
-                        softWrap: true,
-                        textAlign: TextAlign.center,
-                        style: DataConstants.commonTextStyle(
-                            weight: FontWeight.w500,
-                            height: 0,
-                            fontSize: DataConstants.sixteen,
-                            color: selectedGender == 'Man'
-                                ? kWhite
-                                : Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
+                        child: Text(
+                          "Male or Female",
+                          style: DataConstants.commonTextStyle(
+                              weight: FontWeight.w500,
+                              fontSize: DataConstants.sixteen,
+                              color: selectedGender == 'Male or Female'
+                                  ? kWhite
+                                  : Colors.black),
+                        ),
                       ),
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender = 'Woman';
+                        selectedGender =
+                            'Religion based  or Non-Religion Based';
                       });
                     },
                     child: Container(
-                      width: 100.w,
-                      margin: EdgeInsets.only(bottom: 2.h),
                       alignment: Alignment.center,
-                      height: 6.h,
+                      margin: EdgeInsets.only(bottom: 2.h),
+
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
-                          color: selectedGender == 'Woman'
+                          color: selectedGender ==
+                                  'Religion based  or Non-Religion Based'
                               ? DataConstants.blueColor
                               : Color(0xffe4e4e4)),
-                      child: Text(
-                        "Woman",
-                        softWrap: true,
-                        textAlign: TextAlign.center,
-                        style: DataConstants.commonTextStyle(
-                            weight: FontWeight.w500,
-                            height: 0,
-                            fontSize: DataConstants.sixteen,
-                            color: selectedGender == 'Woman'
-                                ? kWhite
-                                : Colors.black),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
+                        child: Text(
+                          "Religion based  or Non-Religion Based",
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: DataConstants.commonTextStyle(
+                              weight: FontWeight.w500,
+                              fontSize: DataConstants.sixteen,
+                              color: selectedGender ==
+                                      'Religion based  or Non-Religion Based'
+                                  ? kWhite
+                                  : Colors.black),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = 'Older therapist or Doesn’t matter';
+                      });
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(bottom: 2.h),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          color: selectedGender ==
+                                  'Older therapist or Doesn’t matter'
+                              ? DataConstants.blueColor
+                              : Color(0xffe4e4e4)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
+                        child: Text(
+                          "Older therapist or Doesn’t matter",
+                          softWrap: true,
+                          textAlign: TextAlign.center,
+                          style: DataConstants.commonTextStyle(
+                              weight: FontWeight.w500,
+                              fontSize: DataConstants.sixteen,
+                              color: selectedGender ==
+                                      'Older therapist or Doesn’t matter'
+                                  ? kWhite
+                                  : Colors.black),
+                        ),
                       ),
                     ),
                   ),
@@ -157,7 +191,7 @@ class _GenderIdentityState extends State<GenderIdentity> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(IdentityStatus());
+              // Get.to(SleepingHabits());
             },
             child: Container(
               decoration: BoxDecoration(

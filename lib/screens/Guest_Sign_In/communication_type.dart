@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
 import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/preferenceTherapist.dart';
 import 'package:nafs/screens/Guest_Sign_In/relationshipStatus.dart';
-import 'package:nafs/screens/Guest_Sign_In/religiousStatuc.dart';
+import 'package:nafs/screens/Guest_Sign_In/sleepinghabits.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-class IdentityStatus extends StatefulWidget {
-  const IdentityStatus({super.key});
+
+import 'nationalityStatus.dart';
+
+class CommunicationType extends StatefulWidget {
+  const CommunicationType({super.key});
 
   @override
-  State<IdentityStatus> createState() => _IdentityStatusState();
+  State<CommunicationType> createState() => _ReligiousStatusState();
 }
 
-class _IdentityStatusState extends State<IdentityStatus> {
-  var selectedGender = 'Straight';
+class _ReligiousStatusState extends State<CommunicationType> {
+  var selectedGender = 'Via phone or video call';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,24 +44,22 @@ class _IdentityStatusState extends State<IdentityStatus> {
                           },
                           child: SvgPicture.asset("assets/login/arrow-left.svg")),
                       SizedBox(
-                        height: 5.h,
+                        height: 2.h,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-
                           Text(
-                            "How do you identify?",
+                            "How do you prefer to communicate with your therapist ?",
                             softWrap: true,
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.start,
                             style: DataConstants.commonTextStyle(
                                 weight: FontWeight.bold,
                                 fontSize: DataConstants.twentyFour,
                                 color: DataConstants.blackColor),
                           ),
-
                           Text(
-                            "Select your identity status",
+                            "Select the way of communication",
                             softWrap: true,
                             textAlign: TextAlign.center,
                             style: DataConstants.commonTextStyle(
@@ -68,12 +71,12 @@ class _IdentityStatusState extends State<IdentityStatus> {
                         ],
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 5.h,
                       ),
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedGender = 'Straight';
+                            selectedGender = 'In person';
                           });
                         },
                         child: Container(
@@ -83,11 +86,11 @@ class _IdentityStatusState extends State<IdentityStatus> {
                           height: 6.h,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'Straight'
+                              color: selectedGender == 'In person'
                                   ? DataConstants.blueColor
                                   : Color(0xffe4e4e4)),
                           child: Text(
-                            "Straight",
+                            "In person",
                             softWrap: true,
                             textAlign: TextAlign.center,
                             style: DataConstants.commonTextStyle(
@@ -95,14 +98,14 @@ class _IdentityStatusState extends State<IdentityStatus> {
                                 height: 0,
                                 fontSize: DataConstants.sixteen,
                                 color:
-                                selectedGender == 'Straight' ? kWhite : Colors.black),
+                                selectedGender == 'In person' ? kWhite : Colors.black),
                           ),
                         ),
                       ),
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedGender = 'gay';
+                            selectedGender = 'Via phone or video call';
                           });
                         },
                         child: Container(
@@ -112,18 +115,18 @@ class _IdentityStatusState extends State<IdentityStatus> {
                           height: 6.h,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'gay'
+                              color: selectedGender == 'Via phone or video call'
                                   ? DataConstants.blueColor
                                   : Color(0xffe4e4e4)),
                           child: Text(
-                            "Gay",
+                            "Via phone or video call",
                             softWrap: true,
                             textAlign: TextAlign.center,
                             style: DataConstants.commonTextStyle(
                                 weight: FontWeight.w500,
                                 height: 0,
                                 fontSize: DataConstants.sixteen,
-                                color: selectedGender == 'Gay'
+                                color: selectedGender == 'Via phone or video call'
                                     ? kWhite
                                     : Colors.black),
                           ),
@@ -132,120 +135,32 @@ class _IdentityStatusState extends State<IdentityStatus> {
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedGender = 'Lesbian';
+                            selectedGender = 'Not sure yet (decide later)';
                           });
                         },
                         child: Container(
-                          width: 100.w,
+
                           margin: EdgeInsets.only(bottom: 2.h),
                           alignment: Alignment.center,
-                          height: 6.h,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'Lesbian'
+                              color: selectedGender == 'Not sure yet (decide later)'
                                   ? DataConstants.blueColor
                                   : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Lesbian",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedGender == 'Lesbian'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedGender = 'Asexual';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'Asexual'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Asexual",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedGender == 'Asexual'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedGender = 'Questioning';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'Questioning'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Questioning",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedGender == 'Questioning'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedGender = 'I don’t know';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedGender == 'I don’t know'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "I don’t know",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedGender == 'I don’t know'
-                                    ? kWhite
-                                    : Colors.black),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "Not sure yet (decide later)",
+                              softWrap: true,
+                              textAlign: TextAlign.center,
+                              style: DataConstants.commonTextStyle(
+                                  weight: FontWeight.w500,
+                                  height: 0,
+                                  fontSize: DataConstants.sixteen,
+                                  color: selectedGender == 'Not sure yet (decide later)'
+                                      ? kWhite
+                                      : Colors.black),
+                            ),
                           ),
                         ),
                       ),
@@ -277,7 +192,9 @@ class _IdentityStatusState extends State<IdentityStatus> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(RelationshipStatus());
+
+              Get.to(PreferenceTherapist());
+
             },
             child: Container(
               decoration: BoxDecoration(

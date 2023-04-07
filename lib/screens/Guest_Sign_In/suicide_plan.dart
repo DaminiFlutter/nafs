@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
-import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/suicide.dart';
+import 'package:nafs/screens/Guest_Sign_In/todayTheropy.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'identistatus.dart';
-
-class GenderIdentity extends StatefulWidget {
-  const GenderIdentity({super.key});
+class SuicidePlan extends StatefulWidget {
+  const SuicidePlan({super.key});
 
   @override
-  State<GenderIdentity> createState() => _GenderIdentityState();
+  State<SuicidePlan> createState() => _SuicidePlanState();
 }
 
-class _GenderIdentityState extends State<GenderIdentity> {
-  var selectedGender = 'Man';
+class _SuicidePlanState extends State<SuicidePlan> {
+  var selectedGender = 'No, It is a general thought or feelings';
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +39,23 @@ class _GenderIdentityState extends State<GenderIdentity> {
                         Get.back();
                       },
                       child: SvgPicture.asset("assets/login/arrow-left.svg")),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 3.h,
-                      ),
                       Text(
-                        "What is your gender identity?",
+                        "Have you made a specific plan for suicide",
                         softWrap: true,
-                        textAlign: TextAlign.center,
+                        textAlign: TextAlign.start,
                         style: DataConstants.commonTextStyle(
                             weight: FontWeight.bold,
                             fontSize: DataConstants.twentyFour,
                             color: DataConstants.blackColor),
                       ),
                       Text(
-                        "Select Your Gender",
+                        "Select carefully",
                         softWrap: true,
                         textAlign: TextAlign.center,
                         style: DataConstants.commonTextStyle(
@@ -73,7 +72,8 @@ class _GenderIdentityState extends State<GenderIdentity> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender = 'Man';
+                        selectedGender =
+                            'No, It is a general thought or feelings';
                       });
                     },
                     child: Container(
@@ -83,18 +83,20 @@ class _GenderIdentityState extends State<GenderIdentity> {
                       height: 6.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
-                          color: selectedGender == 'Man'
+                          color: selectedGender ==
+                                  'No, It is a general thought or feelings'
                               ? DataConstants.blueColor
                               : Color(0xffe4e4e4)),
                       child: Text(
-                        "Man",
+                        "No, It is a general thought or feelings",
                         softWrap: true,
                         textAlign: TextAlign.center,
                         style: DataConstants.commonTextStyle(
                             weight: FontWeight.w500,
                             height: 0,
                             fontSize: DataConstants.sixteen,
-                            color: selectedGender == 'Man'
+                            color: selectedGender ==
+                                    'No, It is a general thought or feelings'
                                 ? kWhite
                                 : Colors.black),
                       ),
@@ -103,7 +105,7 @@ class _GenderIdentityState extends State<GenderIdentity> {
                   GestureDetector(
                     onTap: () {
                       setState(() {
-                        selectedGender = 'Woman';
+                        selectedGender = 'Yes, I have made specific plans';
                       });
                     },
                     child: Container(
@@ -113,23 +115,50 @@ class _GenderIdentityState extends State<GenderIdentity> {
                       height: 6.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(24),
-                          color: selectedGender == 'Woman'
+                          color: selectedGender ==
+                                  'Yes, I have made specific plans'
                               ? DataConstants.blueColor
                               : Color(0xffe4e4e4)),
                       child: Text(
-                        "Woman",
+                        "Yes, I have made specific plans",
                         softWrap: true,
                         textAlign: TextAlign.center,
                         style: DataConstants.commonTextStyle(
                             weight: FontWeight.w500,
                             height: 0,
                             fontSize: DataConstants.sixteen,
-                            color: selectedGender == 'Woman'
+                            color: selectedGender ==
+                                    'Yes, I have made specific plans'
                                 ? kWhite
                                 : Colors.black),
                       ),
                     ),
                   ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: DataConstants.blueColor.withOpacity(0.35),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset("assets/login/info.svg"),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Many problems start from little so feel",softWrap: true,),
+                              Text("free to contact suicide hotline number"),
+                              Text("Embrace-1564",style: DataConstants.commonTextStyle(weight: FontWeight.bold, fontSize: 14, color: DataConstants.blackColor),)
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -157,7 +186,8 @@ class _GenderIdentityState extends State<GenderIdentity> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(IdentityStatus());
+              Get.to(TodayTheropy());
+              // }
             },
             child: Container(
               decoration: BoxDecoration(

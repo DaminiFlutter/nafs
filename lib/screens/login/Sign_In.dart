@@ -9,6 +9,8 @@ import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../Guest_Sign_In/Type_of_Theropy.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
 
@@ -317,7 +319,7 @@ class _SignInState extends State<SignIn> {
   GuestSignInButton() {
     return GestureDetector(
       onTap: () {
-        Get.to(GenderIdentity());
+        Get.to(TypeOfTheropy());
       },
       child: Container(
         width: 100.w,

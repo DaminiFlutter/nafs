@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'Gender_Identity.dart';
 import 'identistatus.dart';
 
 class TypeOfTheropy extends StatefulWidget {
@@ -16,6 +17,7 @@ class TypeOfTheropy extends StatefulWidget {
 
 class _TypeOfTheropyState extends State<TypeOfTheropy> {
   var selectedType = 'Individual';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,120 +30,132 @@ class _TypeOfTheropyState extends State<TypeOfTheropy> {
             top: 5.h,
           ),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: SvgPicture.asset("assets/login/arrow-left.svg")),
-                Center(
-                  child: Text(
-                    "What type of theropy are you looking for",
-                    softWrap: true,
-                    textAlign: TextAlign.center,
-                    style: DataConstants.commonTextStyle(
-                        weight: FontWeight.bold,
-                        fontSize: DataConstants.twentyFour,
-                        color: DataConstants.blackColor),
-                  ),
-                ),
-                Center(
-                  child: Text(
-                    "Select for you who you looking good",
-                    softWrap: true,
-                    textAlign: TextAlign.center,
-                    style: DataConstants.commonTextStyle(
-                        weight: FontWeight.w400,
-
-                        fontSize: DataConstants.eighteen,
-                        color: DataConstants.lightBlackColor),
-                  ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedType = 'Individual';
-                    });
-                  },
-                  child: Container(
-                    width: 100.w,
-                    margin: EdgeInsets.only(bottom: 4.h),
-                    alignment: Alignment.center,
-                    height: 6.h,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24),
-                        color: selectedType == 'Individual'
-                            ? DataConstants.blueColor
-                            : Color(0xffe4e4e4)),
-                    child: Text(
-                      "Individual (For Myself)",
-                      softWrap: true,
-                      textAlign: TextAlign.center,
-                      style: DataConstants.commonTextStyle(
-                          weight: FontWeight.w500,
-                          height: 0,
-                          fontSize: DataConstants.sixteen,
-                          color: selectedType == 'Individual'
-                              ? kWhite
-                              : Colors.black),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedType = 'Couples';
-                    });
-                  },
-                  child: Container(
-                    width: 100.w,
-                    margin: EdgeInsets.only(bottom: 2.h),
-                    alignment: Alignment.center,
-                    height: 6.h,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(24),
-                        color: selectedType == 'Couples'
-                            ? DataConstants.blueColor
-                            : Color(0xffe4e4e4)),
-                    child: Text(
-                      "Couples (For me and my partner)",
-                      softWrap: true,
-                      textAlign: TextAlign.center,
-                      style: DataConstants.commonTextStyle(
-                          weight: FontWeight.w500,
-                          height: 0,
-                          fontSize: DataConstants.sixteen,
-                          color: selectedType == 'Couples'
-                              ? kWhite
-                              : Colors.black),
-                    ),
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: DataConstants.blueColor.withOpacity(0.35),
-                    borderRadius: BorderRadius.all(Radius.circular(10))
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset("assets/login/info.svg"),
-                        SizedBox(
-                          width: 5.w,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: SvgPicture.asset("assets/login/arrow-left.svg")),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Center(
+                        child: Text(
+                          "What type of theropy are you looking for?",
+                          softWrap: true,
+                          textAlign: TextAlign.start,
+                          style: DataConstants.commonTextStyle(
+                              weight: FontWeight.bold,
+                              fontSize: DataConstants.twentyFour,
+                              color: DataConstants.blackColor),
                         ),
-                        Text("Let’s walk through the process of\nfinding the best therapist for you! We’ll\nstart off with some basic questions"),
-                      ],
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      Text(
+                        "Select for you who you looking good",
+                        softWrap: true,
+                        textAlign: TextAlign.start,
+                        style: DataConstants.commonTextStyle(
+                            weight: FontWeight.w400,
+                            fontSize: DataConstants.eighteen,
+                            color: DataConstants.lightBlackColor),
+                      ),
+                      SizedBox(
+                        height: 4.h,
+                      ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedType = 'Individual';
+                      });
+                    },
+                    child: Container(
+                      width: 100.w,
+                      margin: EdgeInsets.only(bottom: 2.h),
+                      alignment: Alignment.center,
+                      height: 6.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          color: selectedType == 'Individual'
+                              ? DataConstants.blueColor
+                              : Color(0xffe4e4e4)),
+                      child: Text(
+                        "Individual (For Myself)",
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: DataConstants.commonTextStyle(
+                            weight: FontWeight.w500,
+                            height: 0,
+                            fontSize: DataConstants.sixteen,
+                            color: selectedType == 'Individual'
+                                ? kWhite
+                                : Colors.black),
+                      ),
                     ),
                   ),
-                )
-              ],
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedType = 'Couples';
+                      });
+                    },
+                    child: Container(
+                      width: 100.w,
+                      margin: EdgeInsets.only(bottom: 5.h),
+                      alignment: Alignment.center,
+                      height: 6.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          color: selectedType == 'Couples'
+                              ? DataConstants.blueColor
+                              : Color(0xffe4e4e4)),
+                      child: Text(
+                        "Couples (For me and my partner)",
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: DataConstants.commonTextStyle(
+                            weight: FontWeight.w500,
+                            height: 0,
+                            fontSize: DataConstants.sixteen,
+                            color: selectedType == 'Couples'
+                                ? kWhite
+                                : Colors.black),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: DataConstants.blueColor.withOpacity(0.35),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset("assets/login/info.svg"),
+                          SizedBox(
+                            width: 5.w,
+                          ),
+                          Text(
+
+                              "Let’s walk through the process of\nfinding the best therapist for you! We’ll\nstart off with some basic questions",softWrap: true,),
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         )),
@@ -156,18 +170,18 @@ class _TypeOfTheropyState extends State<TypeOfTheropy> {
       width: 100.h,
       padding: EdgeInsets.only(left: 2.h, right: 2.h),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(
-            "Skip",
-            style: DataConstants.commonTextStyle(
-                weight: FontWeight.w600,
-                fontSize: DataConstants.twenty,
-                color: DataConstants.skipColor),
-          ),
+          // Text(
+          //   "Skip",
+          //   style: DataConstants.commonTextStyle(
+          //       weight: FontWeight.w600,
+          //       fontSize: DataConstants.twenty,
+          //       color: DataConstants.skipColor),
+          // ),
           GestureDetector(
             onTap: () {
-              Get.to(IdentityStatus());
+              Get.to(GenderIdentity());
             },
             child: Container(
               decoration: BoxDecoration(

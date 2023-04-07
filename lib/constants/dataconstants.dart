@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class DataConstants {
   static Color activeColor = const Color(0xff65ADC3);
   static Color whiteColor = const Color(0xffFFFFFF);
+  static Color greyColor = const Color(0xffe4e4e4);
   static Color blueColor = const Color(0xff65ADC3);
   static Color inActiveColor = const Color(0xffEEEEEE);
   static Color blackColor = const Color(0xff020202);

@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
-import 'package:nafs/screens/Guest_Sign_In/pasttheory.dart';
+import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/religiousStatuc.dart';
+import 'package:nafs/screens/Guest_Sign_In/suicide_plan.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'identistatus.dart';
-
-class NationalityStatus extends StatefulWidget {
-  const NationalityStatus({super.key});
+import 'nationalityStatus.dart';
+class Suicide extends StatefulWidget {
+  const Suicide({super.key});
 
   @override
-  State<NationalityStatus> createState() => _NationalityStatusState();
+  State<Suicide> createState() => _SuicideState();
 }
 
-class _NationalityStatusState extends State<NationalityStatus> {
-  var selectedType = 'Islam';
+class _SuicideState extends State<Suicide> {
+  var selectedGender = 'Never';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
               ),
               child: SingleChildScrollView(
                 child: Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -40,157 +41,41 @@ class _NationalityStatusState extends State<NationalityStatus> {
                           },
                           child: SvgPicture.asset("assets/login/arrow-left.svg")),
                       SizedBox(
-                        height: 2.h,
+                        height: 5.h,
                       ),
-                      Text(
-                        "Which religion do you identify\nwith?",
-                        softWrap: true,
-                        textAlign: TextAlign.start,
-                        style: DataConstants.commonTextStyle(
-                            weight: FontWeight.bold,
-                            fontSize: DataConstants.twentyFour,
-                            color: DataConstants.blackColor),
-                      ),
-                      SizedBox(
-                        height: 2.h,
-                      ),
-                      Text(
-                        "Select your religion",
-                        softWrap: true,
-                        textAlign: TextAlign.start,
-                        style: DataConstants.commonTextStyle(
-                            weight: FontWeight.w400,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
 
-                            fontSize: DataConstants.eighteen,
-                            color: DataConstants.lightBlackColor),
+                          Text(
+                            "When was the last time you thought about suicide?",
+                            softWrap: true,
+                            textAlign: TextAlign.start,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.bold,
+                                fontSize: DataConstants.twentyFour,
+                                color: DataConstants.blackColor),
+                          ),
+
+                          Text(
+                            "Select carefully",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 2,
+                                fontSize: DataConstants.eighteen,
+                                color: DataConstants.lightBlackColor),
+                          ),
+                        ],
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 2.h,
                       ),
                       GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedType = 'Islam';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedType == 'Islam'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Islam",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedType == 'Islam'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedType = 'Christianity';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedType == 'Christianity'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Christianity",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedType == 'Christianity'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedType = 'Hinduism';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedType == 'Hinduism'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Hinduism",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedType == 'Hinduism'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedType = 'Druze';
-                          });
-                        },
-                        child: Container(
-                          width: 100.w,
-                          margin: EdgeInsets.only(bottom: 2.h),
-                          alignment: Alignment.center,
-                          height: 6.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(24),
-                              color: selectedType == 'Druze'
-                                  ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
-                          child: Text(
-                            "Druze",
-                            softWrap: true,
-                            textAlign: TextAlign.center,
-                            style: DataConstants.commonTextStyle(
-                                weight: FontWeight.w500,
-                                height: 0,
-                                fontSize: DataConstants.sixteen,
-                                color: selectedType == 'Druze'
-                                    ? kWhite
-                                    : Colors.black),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedType = 'Other';
+                            selectedGender = 'Never';
                           });
                         },
                         child: Container(
@@ -200,42 +85,203 @@ class _NationalityStatusState extends State<NationalityStatus> {
                           height: 6.h,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(24),
-                              color: selectedType == 'Other'
+                              color: selectedGender == 'Never'
                                   ? DataConstants.blueColor
                                   : Color(0xffe4e4e4)),
                           child: Text(
-                            "Other",
+                            "Never",
                             softWrap: true,
                             textAlign: TextAlign.center,
                             style: DataConstants.commonTextStyle(
                                 weight: FontWeight.w500,
                                 height: 0,
                                 fontSize: DataConstants.sixteen,
-                                color: selectedType == 'Other'
+                                color:
+                                selectedGender == 'Never' ? kWhite : Colors.black),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'Over a year ago';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'Over a year ago'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "Over a year ago",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'Over a year ago'
                                     ? kWhite
                                     : Colors.black),
                           ),
                         ),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: DataConstants.blueColor.withOpacity(0.35),
-                            borderRadius: BorderRadius.all(Radius.circular(10))
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SvgPicture.asset("assets/login/info.svg"),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              Text("Therapists on the Therapy platform\nhave diverse backgrounds. You’ll be\nable to request a muslim therapist if\nneeded."),
-                            ],
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'Over 3 months ago';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'Over 3 months ago'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "Over 3 months ago",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'Over 3 months ago'
+                                    ? kWhite
+                                    : Colors.black),
                           ),
                         ),
-                      )
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'Over a month ago';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'Over a month ago'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "Over a month ago",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'Over a month ago'
+                                    ? kWhite
+                                    : Colors.black),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'Over 2 weeks ago';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'Over 2 weeks ago'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "Over 2 weeks ago",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'Over 2 weeks agos'
+                                    ? kWhite
+                                    : Colors.black),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'In the last 2 weeks';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'In the last 2 weeks'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "In the last 2 weeks",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'In the last 2 weeks'
+                                    ? kWhite
+                                    : Colors.black),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedGender = 'Over a day ago';
+                          });
+                        },
+                        child: Container(
+                          width: 100.w,
+                          margin: EdgeInsets.only(bottom: 2.h),
+                          alignment: Alignment.center,
+                          height: 6.h,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: selectedGender == 'Over a day ago'
+                                  ? DataConstants.blueColor
+                                  : Color(0xffe4e4e4)),
+                          child: Text(
+                            "Over a day ago",
+                            softWrap: true,
+                            textAlign: TextAlign.center,
+                            style: DataConstants.commonTextStyle(
+                                weight: FontWeight.w500,
+                                height: 0,
+                                fontSize: DataConstants.sixteen,
+                                color: selectedGender == 'Over a day ago'
+                                    ? kWhite
+                                    : Colors.black),
+                          ),
+                        ),
+                      ),
+
                     ],
                   ),
                 ),
@@ -263,7 +309,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(PastTheory());
+              Get.to(SuicidePlan());
             },
             child: Container(
               decoration: BoxDecoration(
