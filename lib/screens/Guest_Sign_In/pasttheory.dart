@@ -87,7 +87,7 @@ class _ReligiousStatusState extends State<PastTheory> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'No'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "No",
                             softWrap: true,
@@ -116,7 +116,7 @@ class _ReligiousStatusState extends State<PastTheory> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Yes'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Yes",
                             softWrap: true,

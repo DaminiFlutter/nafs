@@ -23,14 +23,7 @@ class _SuicideState extends State<TodayTheropy> {
       "title": "I’ve been having panic attacks/anxiety/phobias",
       "selected": false
     },
-    {
-      "title": "I’ve been feeling anxious/overwhelmed",
-      "selected": false
-    },
-    {
-      "title": "I’ve been having panic attacks/anxiety/phobias",
-      "selected": false
-    },
+    {"title": "I’ve been feeling anxious/overwhelmed", "selected": false},
     {
       "title": "My Mood is interfering with my work performance",
       "selected": false
@@ -39,46 +32,23 @@ class _SuicideState extends State<TodayTheropy> {
       "title": "I struggle with building or maintaining relationships",
       "selected": false
     },
-    {
-      "title": "I have sexuality issues",
-      "selected": false
-    },
-    {
-      "title": "I am grieving/i have lost someone close",
-      "selected": false
-    },
-    {
-      "title": "I have experienced trauma",
-      "selected": false
-    },
+    {"title": "I have sexuality issues", "selected": false},
+    {"title": "I am grieving/i have lost someone close", "selected": false},
+    {"title": "I have experienced trauma", "selected": false},
     {
       "title": "I have experienced abuse (sexual,physical,emotional)",
       "selected": false
     },
     {
-      "title": "I am undergoing a big change/need to talk through a specific challenge",
+      "title":
+          "I am undergoing a big change/need to talk through a specific challenge",
       "selected": false
     },
-    {
-      "title": "I have an eating disorder",
-      "selected": true
-    },
-    {
-      "title": "I have an addiction/substance abuse",
-      "selected": false
-    },
-    {
-      "title": "I have anger issues",
-      "selected": false
-    },
-    {
-      "title": "I have chronic pain/tiredness/lethargy",
-      "selected": false
-    },
-    {
-      "title": "I have medical issue/illness",
-      "selected": false
-    }
+    {"title": "I have an eating disorder", "selected": true},
+    {"title": "I have an addiction/substance abuse", "selected": false},
+    {"title": "I have anger issues", "selected": false},
+    {"title": "I have chronic pain/tiredness/lethargy", "selected": false},
+    {"title": "I have medical issue/illness", "selected": false}
   ];
 
   // var selectedIndex =
@@ -89,15 +59,7 @@ class _SuicideState extends State<TodayTheropy> {
         backgroundColor: Colors.white,
         body: SafeArea(
             child: Padding(
-          padding: EdgeInsets.only(
-            left: 3.h,
-            right: 3.h,
-            top: 5.h,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SingleChildScrollView(
-              physics: ScrollPhysics(),
+              padding:  EdgeInsets.symmetric(horizontal: 12.w,vertical: 6.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -107,7 +69,7 @@ class _SuicideState extends State<TodayTheropy> {
                       },
                       child: SvgPicture.asset("assets/login/arrow-left.svg")),
                   SizedBox(
-                    height: 5.h,
+                    height: 3.h,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,49 +98,57 @@ class _SuicideState extends State<TodayTheropy> {
                   SizedBox(
                     height: 2.h,
                   ),
-                  ListView.builder(
-                    itemCount: todayTheropyList.length,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (BuildContext context, int i) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            todayTheropyList[i]["selected"] =
-                                !todayTheropyList[i]["selected"];
-                          });
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: todayTheropyList[i]["selected"] == true
-                                  ? DataConstants.blueColor
-                                  : DataConstants.greyColor,
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(19))),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              "${todayTheropyList[i]['title']}",
-                              style: DataConstants.commonTextStyle(
-                                  weight: FontWeight.w500,
-                                  height: 0,
-                                  fontSize: DataConstants.sixteen,
-                                  color: todayTheropyList[i]["selected"] ==
-                                          true
-                                      ? DataConstants.whiteColor
-                                      : DataConstants.blackColor),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: todayTheropyList.length,
+                      shrinkWrap: true,
+                      physics: AlwaysScrollableScrollPhysics(),
+                      itemBuilder: (BuildContext context, int i) => Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                todayTheropyList[i]["selected"] =
+                                    !todayTheropyList[i]["selected"];
+                              });
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: Color(0xffE0E0E0)
+                                ),
+                                  color: todayTheropyList[i]["selected"] == true
+                                      ? DataConstants.blueColor
+                                      : Color(0xffF0F1F5),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(19))),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  "${todayTheropyList[i]['title']}",
+                                  style: DataConstants.commonTextStyle(
+                                      weight: FontWeight.w500,
+                                      height: 0,
+                                      fontSize: DataConstants.fourteen,
+                                      color:
+                                          todayTheropyList[i]["selected"] == true
+                                              ? DataConstants.whiteColor
+                                              : DataConstants.blackColor),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            height: 10,
+                          )
+                        ],
                       ),
                     ),
                   )
                 ],
               ),
-            ),
-          ),
-        )),
+            )),
         bottomSheet: BottomBar());
   }
 

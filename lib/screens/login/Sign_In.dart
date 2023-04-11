@@ -138,12 +138,12 @@ class _SignInState extends State<SignIn> {
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 1.2.h, vertical: 1.5.h),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffe4e4e4), width: 0.5),
+                borderSide: BorderSide(color: Color(0xffF0F1F5), width: 0.5),
                 borderRadius: BorderRadius.circular(10)),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.0),
               borderSide: BorderSide(
-                color: Color(0xffe4e4e4),
+                color: Color(0xffF0F1F5),
               ),
             ),
             hintText: 'Enter Your Email',
@@ -174,11 +174,11 @@ class _SignInState extends State<SignIn> {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
               borderSide: BorderSide(
-                color: Color(0xffe4e4e4),
+                color: Color(0xffF0F1F5),
               ),
             ),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffe4e4e4), width: 0.5),
+                borderSide: BorderSide(color: Color(0xffF0F1F5), width: 0.5),
                 borderRadius: BorderRadius.circular(10)),
             hintText: 'Enter Your Password',
             suffixIcon: IconButton(
@@ -326,8 +326,12 @@ class _SignInState extends State<SignIn> {
         margin: EdgeInsets.only(bottom: 2.h),
         alignment: Alignment.center,
         height: 6.h,
+
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(24), color: Color(0xffe4e4e4)),
+            border: Border.all(
+                color: Color(0xffE0E0E0)
+            ),
+            borderRadius: BorderRadius.circular(24), color: Color(0xffF0F1F5)),
         child: Text(
           "Guest Sign In",
           softWrap: true,

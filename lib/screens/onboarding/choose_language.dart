@@ -48,7 +48,7 @@ class _ChooseLanguageState extends State<ChooseLanguage> {
                     color: DataConstants.blackColor),
               ),
               Text(
-                "Please choose your preferred therapy\nlanguage, you can change it later in profile settings",
+                "Please choose your preferred therapy language, you can change it later in profile settings",
                 softWrap: true,
                 textAlign: TextAlign.center,
                 style: DataConstants.commonTextStyle(
@@ -68,8 +68,6 @@ class _ChooseLanguageState extends State<ChooseLanguage> {
                     onTap: () {
                       setState(() {
                         selectedIndex = index;
-                        // _languageList[index]["isSelected"] =
-                        //     !_languageList[index]["isSelected"];
                       });
                       // Logic.streamController.sink.add(true);
                     },
@@ -79,10 +77,13 @@ class _ChooseLanguageState extends State<ChooseLanguage> {
                       alignment: Alignment.center,
                       height: 6.h,
                       decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Color(0xffE0E0E0)
+                          ),
                           borderRadius: BorderRadius.circular(24),
                           color: selectedIndex == index
                               ? DataConstants.blueColor.withOpacity(0.5)
-                              : Color(0xffE0E0E0)),
+                              : Color(0xffF0F1F5)),
                       child: Padding(
                         padding: EdgeInsets.only(right: 10.w),
                         child: Row(

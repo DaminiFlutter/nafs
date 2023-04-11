@@ -82,7 +82,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedType == 'Islam'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Islam",
                             softWrap: true,
@@ -112,7 +112,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedType == 'Christianity'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Christianity",
                             softWrap: true,
@@ -142,7 +142,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedType == 'Hinduism'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Hinduism",
                             softWrap: true,
@@ -172,7 +172,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedType == 'Druze'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Druze",
                             softWrap: true,
@@ -202,7 +202,7 @@ class _NationalityStatusState extends State<NationalityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedType == 'Other'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Other",
                             softWrap: true,

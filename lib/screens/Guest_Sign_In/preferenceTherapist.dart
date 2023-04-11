@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
 import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/country.dart';
 import 'package:nafs/screens/Guest_Sign_In/relationshipStatus.dart';
 import 'package:nafs/screens/Guest_Sign_In/sleepinghabits.dart';
 import 'package:nafs/screens/home/home_screen.dart';
@@ -86,7 +87,7 @@ class _ReligiousStatusState extends State<PreferenceTherapist> {
                           borderRadius: BorderRadius.circular(24),
                           color: selectedGender == 'Male or Female'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
                         child: Text(
@@ -117,7 +118,7 @@ class _ReligiousStatusState extends State<PreferenceTherapist> {
                           color: selectedGender ==
                                   'Religion based  or Non-Religion Based'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
                         child: Text(
@@ -148,7 +149,7 @@ class _ReligiousStatusState extends State<PreferenceTherapist> {
                           color: selectedGender ==
                                   'Older therapist or Doesn’t matter'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 10),
                         child: Text(
@@ -193,7 +194,7 @@ class _ReligiousStatusState extends State<PreferenceTherapist> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(LookingForScreen());
+              Get.to(CountryScreen());
             },
             child: Container(
               decoration: BoxDecoration(

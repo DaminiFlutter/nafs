@@ -17,7 +17,7 @@ class ExpectationFromTheropy extends StatefulWidget {
 }
 
 class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
-  var selectedGender = 'No, It is a general thought or feelings';
+  var selectedGender = 'Guides me to set goals';
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Listens'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
                             child: Text(
@@ -118,7 +118,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Explores my past'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
                             child: Text(
@@ -148,7 +148,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Teaches me new skills'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
                             child: Text(
@@ -179,7 +179,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Assigns me homework'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
                             child: Text(
@@ -209,7 +209,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Guides me to set goals'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal:20.0,vertical: 10),
                             child: Text(

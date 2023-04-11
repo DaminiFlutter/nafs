@@ -124,12 +124,12 @@ class _ResetPasswordState extends State<ResetPassword> {
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 1.2.h, vertical: 1.5.h),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffe4e4e4), width: 0.5),
+                borderSide: BorderSide(color: Color(0xffF0F1F5), width: 0.5),
                 borderRadius: BorderRadius.circular(10)),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.0),
               borderSide: BorderSide(
-                color: Color(0xffe4e4e4),
+                color: Color(0xffF0F1F5),
               ),
             ),
             hintText: 'Enter New Password',
@@ -157,12 +157,12 @@ class _ResetPasswordState extends State<ResetPassword> {
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 1.2.h, vertical: 1.5.h),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color(0xffe4e4e4), width: 0.5),
+                borderSide: BorderSide(color: Color(0xffF0F1F5), width: 0.5),
                 borderRadius: BorderRadius.circular(10)),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6.0),
               borderSide: BorderSide(
-                color: Color(0xffe4e4e4),
+                color: Color(0xffF0F1F5),
               ),
             ),
             hintText: 'Enter New Password',

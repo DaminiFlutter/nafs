@@ -86,7 +86,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Single'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Single",
                             softWrap: true,
@@ -115,7 +115,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'In a relationship'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "In a relationship",
                             softWrap: true,
@@ -145,7 +145,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Married'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Married",
                             softWrap: true,
@@ -175,7 +175,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Divorced'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Divorced",
                             softWrap: true,
@@ -205,7 +205,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Widowed'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Widowed",
                             softWrap: true,

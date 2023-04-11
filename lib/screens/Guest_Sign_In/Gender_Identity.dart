@@ -86,7 +86,7 @@ class _GenderIdentityState extends State<GenderIdentity> {
                           borderRadius: BorderRadius.circular(24),
                           color: selectedGender == 'Man'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "Man",
                         softWrap: true,
@@ -116,7 +116,7 @@ class _GenderIdentityState extends State<GenderIdentity> {
                           borderRadius: BorderRadius.circular(24),
                           color: selectedGender == 'Woman'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "Woman",
                         softWrap: true,

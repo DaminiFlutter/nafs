@@ -85,7 +85,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Straight'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Straight",
                             softWrap: true,
@@ -114,7 +114,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'gay'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Gay",
                             softWrap: true,
@@ -144,7 +144,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Lesbian'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Lesbian",
                             softWrap: true,
@@ -174,7 +174,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Asexual'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Asexual",
                             softWrap: true,
@@ -204,7 +204,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Questioning'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Questioning",
                             softWrap: true,
@@ -234,7 +234,7 @@ class _IdentityStatusState extends State<IdentityStatus> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'I don’t know'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "I don’t know",
                             softWrap: true,

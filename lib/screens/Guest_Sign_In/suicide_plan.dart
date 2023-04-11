@@ -86,7 +86,7 @@ class _SuicidePlanState extends State<SuicidePlan> {
                           color: selectedGender ==
                                   'No, It is a general thought or feelings'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "No, It is a general thought or feelings",
                         softWrap: true,
@@ -118,7 +118,7 @@ class _SuicidePlanState extends State<SuicidePlan> {
                           color: selectedGender ==
                                   'Yes, I have made specific plans'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "Yes, I have made specific plans",
                         softWrap: true,

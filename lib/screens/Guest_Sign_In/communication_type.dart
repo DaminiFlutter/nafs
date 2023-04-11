@@ -88,7 +88,7 @@ class _ReligiousStatusState extends State<CommunicationType> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'In person'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "In person",
                             softWrap: true,
@@ -117,7 +117,7 @@ class _ReligiousStatusState extends State<CommunicationType> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Via phone or video call'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Via phone or video call",
                             softWrap: true,
@@ -146,7 +146,7 @@ class _ReligiousStatusState extends State<CommunicationType> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Not sure yet (decide later)'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(

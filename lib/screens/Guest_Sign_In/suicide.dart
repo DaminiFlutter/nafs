@@ -87,7 +87,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Never'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Never",
                             softWrap: true,
@@ -116,7 +116,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Over a year ago'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Over a year ago",
                             softWrap: true,
@@ -146,7 +146,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Over 3 months ago'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Over 3 months ago",
                             softWrap: true,
@@ -176,7 +176,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Over a month ago'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Over a month ago",
                             softWrap: true,
@@ -206,7 +206,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Over 2 weeks ago'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Over 2 weeks ago",
                             softWrap: true,
@@ -236,7 +236,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'In the last 2 weeks'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "In the last 2 weeks",
                             softWrap: true,
@@ -266,7 +266,7 @@ class _SuicideState extends State<Suicide> {
                               borderRadius: BorderRadius.circular(24),
                               color: selectedGender == 'Over a day ago'
                                   ? DataConstants.blueColor
-                                  : Color(0xffe4e4e4)),
+                                  : Color(0xffF0F1F5)),
                           child: Text(
                             "Over a day ago",
                             softWrap: true,

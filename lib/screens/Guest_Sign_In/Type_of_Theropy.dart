@@ -85,11 +85,15 @@ class _TypeOfTheropyState extends State<TypeOfTheropy> {
                       margin: EdgeInsets.only(bottom: 2.h),
                       alignment: Alignment.center,
                       height: 6.h,
+
                       decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Color(0xffE0E0E0)
+                          ),
                           borderRadius: BorderRadius.circular(24),
                           color: selectedType == 'Individual'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "Individual (For Myself)",
                         softWrap: true,
@@ -119,7 +123,7 @@ class _TypeOfTheropyState extends State<TypeOfTheropy> {
                           borderRadius: BorderRadius.circular(24),
                           color: selectedType == 'Couples'
                               ? DataConstants.blueColor
-                              : Color(0xffe4e4e4)),
+                              : Color(0xffF0F1F5)),
                       child: Text(
                         "Couples (For me and my partner)",
                         softWrap: true,
@@ -135,21 +139,24 @@ class _TypeOfTheropyState extends State<TypeOfTheropy> {
                     ),
                   ),
                   Container(
+
                     decoration: BoxDecoration(
                         color: DataConstants.blueColor.withOpacity(0.35),
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding:  EdgeInsets.symmetric(horizontal: 3.w,vertical: 5.w),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SvgPicture.asset("assets/login/info.svg"),
-                          SizedBox(
-                            width: 5.w,
-                          ),
-                          Text(
 
-                              "Let’s walk through the process of\nfinding the best therapist for you! We’ll\nstart off with some basic questions",softWrap: true,),
+                          Text(
+                            "Let’s walk through the process of\nfinding the best therapist for you! We’ll\nstart off with some basic questions",
+                            softWrap: true,
+
+
+                          ),
                         ],
                       ),
                     ),
