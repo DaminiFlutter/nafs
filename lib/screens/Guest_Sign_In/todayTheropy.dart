@@ -96,87 +96,86 @@ class _SuicideState extends State<TodayTheropy> {
           ),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: SvgPicture.asset("assets/login/arrow-left.svg")),
-                SizedBox(
-                  height: 5.h,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "What led you to consider therapy today ?",
-                      softWrap: true,
-                      textAlign: TextAlign.start,
-                      style: DataConstants.commonTextStyle(
-                          weight: FontWeight.bold,
-                          fontSize: DataConstants.twentyFour,
-                          color: DataConstants.blackColor),
-                    ),
-                    Text(
-                      "Select struggles that you need help with",
-                      softWrap: true,
-                      textAlign: TextAlign.center,
-                      style: DataConstants.commonTextStyle(
-                          weight: FontWeight.w500,
-                          height: 2,
-                          fontSize: DataConstants.eighteen,
-                          color: DataConstants.lightBlackColor),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Column(
-                  children: [
-                    ListView.builder(
-                      itemCount: todayTheropyList.length,
-                      shrinkWrap: true,
-                      physics: AlwaysScrollableScrollPhysics(),
-                      itemBuilder: (BuildContext context, int i) => Padding(
-                        padding: const EdgeInsets.only(bottom: 10.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              todayTheropyList[i]["selected"] =
-                                  !todayTheropyList[i]["selected"];
-                            });
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: todayTheropyList[i]["selected"] == true
-                                    ? DataConstants.blueColor
-                                    : DataConstants.greyColor,
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(19))),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                "${todayTheropyList[i]['title']}",
-                                style: DataConstants.commonTextStyle(
-                                    weight: FontWeight.w500,
-                                    height: 0,
-                                    fontSize: DataConstants.sixteen,
-                                    color: todayTheropyList[i]["selected"] ==
-                                            true
-                                        ? DataConstants.whiteColor
-                                        : DataConstants.blackColor),
-                              ),
+            child: SingleChildScrollView(
+              physics: ScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: SvgPicture.asset("assets/login/arrow-left.svg")),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "What led you to consider therapy today ?",
+                        softWrap: true,
+                        textAlign: TextAlign.start,
+                        style: DataConstants.commonTextStyle(
+                            weight: FontWeight.bold,
+                            fontSize: DataConstants.twentyFour,
+                            color: DataConstants.blackColor),
+                      ),
+                      Text(
+                        "Select struggles that you need help with",
+                        softWrap: true,
+                        textAlign: TextAlign.center,
+                        style: DataConstants.commonTextStyle(
+                            weight: FontWeight.w500,
+                            height: 2,
+                            fontSize: DataConstants.eighteen,
+                            color: DataConstants.lightBlackColor),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  ListView.builder(
+                    itemCount: todayTheropyList.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int i) => Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            todayTheropyList[i]["selected"] =
+                                !todayTheropyList[i]["selected"];
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: todayTheropyList[i]["selected"] == true
+                                  ? DataConstants.blueColor
+                                  : DataConstants.greyColor,
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(19))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              "${todayTheropyList[i]['title']}",
+                              style: DataConstants.commonTextStyle(
+                                  weight: FontWeight.w500,
+                                  height: 0,
+                                  fontSize: DataConstants.sixteen,
+                                  color: todayTheropyList[i]["selected"] ==
+                                          true
+                                      ? DataConstants.whiteColor
+                                      : DataConstants.blackColor),
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ],
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         )),

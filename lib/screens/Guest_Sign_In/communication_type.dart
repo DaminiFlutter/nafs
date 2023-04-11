@@ -139,7 +139,7 @@ class _ReligiousStatusState extends State<CommunicationType> {
                           });
                         },
                         child: Container(
-
+                          height: 6.h,
                           margin: EdgeInsets.only(bottom: 2.h),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(

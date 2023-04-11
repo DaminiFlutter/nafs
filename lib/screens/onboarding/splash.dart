@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nafs/screens/onboarding/choose_language.dart';
 
 import '../../constants/dataconstants.dart';
 import 'onboardingScreen.dart';
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 1), () {
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const Onboarding()));
+          .push(MaterialPageRoute(builder: (context) => const ChooseLanguage()));
     });
   }
 

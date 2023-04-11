@@ -74,7 +74,7 @@ class _ExpectationFromTheropyState extends State<ExpectationFromTheropy> {
                   SizedBox(
                     width: double.infinity,
                     child: Wrap(
-                      spacing: 20,
+                      spacing: 10,
                         children: [
                       GestureDetector(
                         onTap: () {

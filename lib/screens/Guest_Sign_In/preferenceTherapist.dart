@@ -4,10 +4,12 @@ import 'package:nafs/constants/dataconstants.dart';
 import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
 import 'package:nafs/screens/Guest_Sign_In/relationshipStatus.dart';
 import 'package:nafs/screens/Guest_Sign_In/sleepinghabits.dart';
+import 'package:nafs/screens/home/home_screen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'lookingFor.dart';
 import 'nationalityStatus.dart';
 
 class PreferenceTherapist extends StatefulWidget {
@@ -191,7 +193,7 @@ class _ReligiousStatusState extends State<PreferenceTherapist> {
           // ),
           GestureDetector(
             onTap: () {
-              // Get.to(SleepingHabits());
+              Get.to(LookingForScreen());
             },
             child: Container(
               decoration: BoxDecoration(

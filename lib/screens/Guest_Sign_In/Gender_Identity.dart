@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nafs/constants/Constants.dart';
 import 'package:nafs/constants/dataconstants.dart';
 import 'package:nafs/screens/Guest_Sign_In/Type_of_Theropy.dart';
+import 'package:nafs/screens/Guest_Sign_In/agescreen.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -157,7 +158,7 @@ class _GenderIdentityState extends State<GenderIdentity> {
           // ),
           GestureDetector(
             onTap: () {
-              Get.to(IdentityStatus());
+              Get.to(AgeScreen());
             },
             child: Container(
               decoration: BoxDecoration(

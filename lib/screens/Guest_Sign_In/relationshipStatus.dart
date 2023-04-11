@@ -79,7 +79,7 @@ class _RelationshipStatusState extends State<RelationshipStatus> {
                         },
                         child: Container(
                           width: 100.w,
-                          margin: EdgeInsets.only(bottom: 4.h),
+                          margin: EdgeInsets.only(bottom: 2.h),
                           alignment: Alignment.center,
                           height: 6.h,
                           decoration: BoxDecoration(
