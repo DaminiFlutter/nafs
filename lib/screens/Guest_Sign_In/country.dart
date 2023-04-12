@@ -21,7 +21,6 @@ class CountryScreen extends StatefulWidget {
 class _CountryScreenState extends State<CountryScreen> {
   final TextEditingController _ageController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  final CountryBloc countryBloc = CountryBloc();
   final List<String> _countries = [
     "Algeria",
     "Bahrain",

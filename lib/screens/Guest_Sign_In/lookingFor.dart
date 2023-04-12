@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nafs/screens/home/home_screen.dart';
 import 'package:sizer/sizer.dart';
 import '../../constants/dataconstants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:get/get.dart';
 class LookingForScreen extends StatefulWidget {
   const LookingForScreen({Key? key}) : super(key: key);
 
@@ -12,6 +13,13 @@ class LookingForScreen extends StatefulWidget {
 
 class _LookingForScreenState extends State<LookingForScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
@@ -20,14 +28,19 @@ class _LookingForScreenState extends State<LookingForScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "We are looking",
-              softWrap: true,
-              textAlign: TextAlign.center,
-              style: DataConstants.commonTextStyle(
-                  weight: FontWeight.bold,
-                  fontSize: DataConstants.twentyFour,
-                  color: DataConstants.blackColor),
+            GestureDetector(
+              onTap: (){
+                Get.to(HomeScreen());
+              },
+              child: Text(
+                "We are looking",
+                softWrap: true,
+                textAlign: TextAlign.center,
+                style: DataConstants.commonTextStyle(
+                    weight: FontWeight.bold,
+                    fontSize: DataConstants.twentyFour,
+                    color: DataConstants.blackColor),
+              ),
             ),
 
             Text(

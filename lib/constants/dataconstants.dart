@@ -10,6 +10,7 @@ class DataConstants {
   static Color blackColor = const Color(0xff020202);
   static Color skipColor = const Color(0xff322E35);
   static Color lightBlackColor = const Color(0xff49454C);
+  static Color redColor = const Color(0xffE1332B);
   static String fontFamily = "Quicksand";
   static double height = 2.0;
   static double twentyFive = 25.0;
