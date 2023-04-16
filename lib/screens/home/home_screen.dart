@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../widgets/home_screen_widgets.dart';
+import 'Home_bottom_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,21 +15,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedPageIndex = 0;
+  int _selectedPageIndex = 0;
+  static List  _pages = [
+    HomeBottomScreen(),
+    ProfileScreen(),
+    ProfileScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              HeaderOfHomeScreen(),
-              SearchWidget(),
-            ],
-          ),
-        )),
+        body: _pages.elementAt(_selectedPageIndex),
         bottomNavigationBar: bottomNavigationBar);
   }
 
@@ -48,16 +45,18 @@ class _HomeScreenState extends State<HomeScreen> {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
+
             type: BottomNavigationBarType.fixed,
             selectedFontSize: 12,
             unselectedFontSize: 12,
             selectedItemColor: Colors.amber[800],
             unselectedItemColor: Colors.grey[500],
             showUnselectedLabels: true,
+            currentIndex: _selectedPageIndex,
             onTap: (value) {
-            if(value==2){
-              Get.to(ProfileScreen());
-            }
+              setState(() {
+                _selectedPageIndex = value;
+              });
             },
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(

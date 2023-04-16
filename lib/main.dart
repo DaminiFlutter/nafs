@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafs/screens/home/home_screen.dart';
 import 'package:nafs/screens/onboarding/splash.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return Sizer(builder:
         (BuildContext context, Orientation orientation, DeviceType deviceType) {
       return GetMaterialApp(
-        home: SplashScreen(),
+        home: HomeScreen(),
         debugShowCheckedModeBanner: false,
         title: 'NAFS',
         theme: ThemeData(

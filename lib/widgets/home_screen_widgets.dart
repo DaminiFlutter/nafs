@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../constants/dataconstants.dart';
+import 'common_label.dart';
 
 class HeaderOfHomeScreen extends StatelessWidget {
   const HeaderOfHomeScreen({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class HeaderOfHomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                  image: AssetImage('assets/onboarding/splash.png'))),
+                  image: AssetImage('assets/profile/image.png'))),
         ),
         SizedBox(width: 10,),
         Text(
@@ -68,6 +69,36 @@ class SearchWidget extends StatelessWidget {
             )));
   }
 }
+
+class Categories extends StatelessWidget {
+  final String text;
+  final String imageName;
+  const Categories({Key? key,required this.text,required this.imageName}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(color: Color(0xffF0F1F5),
+              borderRadius: BorderRadius.all(Radius.circular(10))),
+          child: Stack(
+            children: [
+              Center(
+                  child: Image(image: AssetImage("assets/home/$imageName"),)),
+            ],
+          ),
+        ),
+        CommonLabel(text: text, size: 12, color: DataConstants.lightBlackColor, weight: FontWeight.w500)
+      ],
+    );
+  }
+}
+
+
+
 
 
 
