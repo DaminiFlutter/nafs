@@ -8,6 +8,7 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
 class HomeBottomScreen extends StatefulWidget {
   const HomeBottomScreen({Key? key}) : super(key: key);
 
@@ -168,8 +169,7 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
           height: 15.h,
           width: 20.h,
           decoration: BoxDecoration(
-              image:
-                  DecorationImage(image: AssetImage("assets/home/.png"))),
+              image: DecorationImage(image: AssetImage("assets/home/.png"))),
         )
       ],
     ),
@@ -356,126 +356,145 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: 2,
-                  shrinkWrap: true,
-                  physics: AlwaysScrollableScrollPhysics(),
-                  itemBuilder: (context,index) {
-                    return Column(
-                      children: [
-                        GestureDetector(
-                          onTap:(){
-                            Get.to(ListOfTherapist());
-                        },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: DataConstants.bgGreyColor,
-                                borderRadius: BorderRadius.all(Radius.circular(10))),
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                              child: Row(
-
-                                children: [
-                                  Column(
-                                    children: [Image(image: AssetImage("assets/home/ladydr.png"))],
-                                  ),
-                                  SizedBox(
-                                    width: 5.w,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                        children: [
-                                          CommonLabel(
-                                              text: "Dr. Ali",
-                                              size: 14,
-                                              color: DataConstants.blackColor,
-                                              weight: FontWeight.w600),
-                                          SizedBox(
-                                            width: 35.w,
-                                          ),
-                                          SvgPicture.asset("assets/home/fav.svg")
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 1.h,
-                                      ), CommonLabel(
-                                          text: "Trauma Therapist",
-                                          size: 8,
-                                          color: DataConstants.lightBlackColor,
-                                          weight: FontWeight.w500),
-                                      SizedBox(
-                                        height: 1.h,
-                                      ),
-                                      CommonLabel(
-                                          text: "Lorem ipsum dolor sit amet consectetur. Cras cras pellentesque\n vitae et sollicitudin.",
-                                          size: 7,
-                                          color: DataConstants.lightBlackColor,
-                                          weight: FontWeight.w500),
-                                      SizedBox(
-                                        height: 2.h,
-                                      ),
-
-                                      Row(
-                                        children: [
-                                          Container(
-                                            width: 15.w,
-                                            height: 3.h,
-                                            decoration: BoxDecoration(
-                                                color: DataConstants.blueColor,
-                                                borderRadius: BorderRadius.all(Radius.circular(20))
+                    itemCount: 2,
+                    shrinkWrap: true,
+                    physics: AlwaysScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(ListOfTherapist());
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: DataConstants.bgGreyColor,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Image(
+                                            image: AssetImage(
+                                                "assets/home/ladydr.png"))
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      width: 5.w,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            CommonLabel(
+                                                text: "Dr. Ali",
+                                                size: 14,
+                                                color: DataConstants.blackColor,
+                                                weight: FontWeight.w600),
+                                            SizedBox(
+                                              width: 35.w,
                                             ),
-                                            child: Center(
-                                              child: Text("Book",style: DataConstants.commonTextStyle(weight: FontWeight.w600, fontSize: 11, color: DataConstants.whiteColor),),
+                                            SvgPicture.asset(
+                                                "assets/home/fav.svg")
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 1.h,
+                                        ),
+                                        CommonLabel(
+                                            text: "Trauma Therapist",
+                                            size: 8,
+                                            color:
+                                                DataConstants.lightBlackColor,
+                                            weight: FontWeight.w500),
+                                        SizedBox(
+                                          height: 1.h,
+                                        ),
+                                        CommonLabel(
+                                            text:
+                                                "Lorem ipsum dolor sit amet consectetur. Cras cras pellentesque\n vitae et sollicitudin.",
+                                            size: 7,
+                                            color:
+                                                DataConstants.lightBlackColor,
+                                            weight: FontWeight.w500),
+                                        SizedBox(
+                                          height: 2.h,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              width: 15.w,
+                                              height: 3.h,
+                                              decoration: BoxDecoration(
+                                                  color:
+                                                      DataConstants.blueColor,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(20))),
+                                              child: Center(
+                                                child: Text(
+                                                  "Book",
+                                                  style: DataConstants
+                                                      .commonTextStyle(
+                                                          weight:
+                                                              FontWeight.w600,
+                                                          fontSize: 11,
+                                                          color: DataConstants
+                                                              .whiteColor),
+                                                ),
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            width: 5.w,
-                                          ),
-                                          Row(
-                                            children: [
-                                              SvgPicture.asset("assets/home/star.svg"),
-                                              SizedBox(
-                                                width: 2.w,
-                                              ),
-                                              CommonLabel(
-                                                  text: "(5.0)",
-                                                  size: 12,
-                                                  color: DataConstants.lightBlackColor,
-                                                  weight: FontWeight.w500),
-                                              SizedBox(
-                                                width: 2.w,
-                                              ),
-                                              CommonLabel(
-                                                  text: "((321) Review",
-                                                  size: 8,
-                                                  color: DataConstants.lightBlackColor,
-                                                  weight: FontWeight.w500),
-                                            ],
-                                          )
-                                        ],
-                                      )
-
-
-
-                                    ],
-                                  ),
-
-
-                                ],
+                                            SizedBox(
+                                              width: 5.w,
+                                            ),
+                                            Row(
+                                              children: [
+                                                SvgPicture.asset(
+                                                    "assets/home/star.svg"),
+                                                SizedBox(
+                                                  width: 2.w,
+                                                ),
+                                                CommonLabel(
+                                                    text: "(5.0)",
+                                                    size: 12,
+                                                    color: DataConstants
+                                                        .lightBlackColor,
+                                                    weight: FontWeight.w500),
+                                                SizedBox(
+                                                  width: 2.w,
+                                                ),
+                                                CommonLabel(
+                                                    text: "((321) Review",
+                                                    size: 8,
+                                                    color: DataConstants
+                                                        .lightBlackColor,
+                                                    weight: FontWeight.w500),
+                                              ],
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 3.w,
-                        ),
-                      ],
-                    );
-                  }
-                ),
+                          SizedBox(
+                            height: 3.w,
+                          ),
+                        ],
+                      );
+                    }),
               )
             ],
           ),

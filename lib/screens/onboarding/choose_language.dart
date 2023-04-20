@@ -82,7 +82,7 @@ class _ChooseLanguageState extends State<ChooseLanguage> {
                           ),
                           borderRadius: BorderRadius.circular(24),
                           color: selectedIndex == index
-                              ? DataConstants.blueColor.withOpacity(0.5)
+                              ? DataConstants.blueColor.withOpacity(0.2)
                               : Color(0xffF0F1F5)),
                       child: Padding(
                         padding: EdgeInsets.only(right: 10.w),

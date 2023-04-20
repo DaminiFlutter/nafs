@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nafs/screens/Guest_Sign_In/recommended_therapist.dart';
 import 'package:nafs/screens/home/home_screen.dart';
 import 'package:sizer/sizer.dart';
 import '../../constants/dataconstants.dart';
@@ -18,6 +19,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
 
     super.initState();
 
+    Future.delayed(Duration(seconds: 2)).then((value) => Get.to(RecommnededTherapist()));
   }
   @override
   Widget build(BuildContext context) {
@@ -28,19 +30,14 @@ class _LookingForScreenState extends State<LookingForScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
-              onTap: (){
-                Get.to(HomeScreen());
-              },
-              child: Text(
-                "We are looking",
-                softWrap: true,
-                textAlign: TextAlign.center,
-                style: DataConstants.commonTextStyle(
-                    weight: FontWeight.bold,
-                    fontSize: DataConstants.twentyFour,
-                    color: DataConstants.blackColor),
-              ),
+            Text(
+              "We are looking",
+              softWrap: true,
+              textAlign: TextAlign.center,
+              style: DataConstants.commonTextStyle(
+                  weight: FontWeight.bold,
+                  fontSize: DataConstants.twentyFour,
+                  color: DataConstants.blackColor),
             ),
 
             Text(

@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import '../../widgets/home_screen_widgets.dart';
 import 'Home_bottom_screen.dart';
+import 'categories.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedPageIndex = 0;
   static List  _pages = [
     HomeBottomScreen(),
-    ProfileScreen(),
+    CategoriesScreen(),
     ProfileScreen()
   ];
 
@@ -45,12 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
-
             type: BottomNavigationBarType.fixed,
             selectedFontSize: 12,
             unselectedFontSize: 12,
-            selectedItemColor: Colors.amber[800],
-            unselectedItemColor: Colors.grey[500],
             showUnselectedLabels: true,
             currentIndex: _selectedPageIndex,
             onTap: (value) {
@@ -66,8 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        new SvgPicture.asset("assets/home/home.svg"),
-                        Text("Home")
+                        new SvgPicture.asset("assets/home/home.svg",color: _selectedPageIndex==0?DataConstants.blueColor:DataConstants.blackColor,),
+                        Text("Home",style: TextStyle(color: _selectedPageIndex==0?DataConstants.blueColor:DataConstants.blackColor,),)
                       ],
                     ),
                   ),
@@ -81,8 +79,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SvgPicture.asset("assets/home/categories.svg"),
-                        Text("Categories")
+                        SvgPicture.asset("assets/home/categories.svg",color: _selectedPageIndex==1?DataConstants.blueColor:DataConstants.blackColor,),
+                        Text("Categories",style: TextStyle(color: _selectedPageIndex==1?DataConstants.blueColor:DataConstants.blackColor,),)
                       ],
                     ),
                   ),
@@ -98,9 +96,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         new SvgPicture.asset(
                           "assets/home/profile.svg",
-                          color: DataConstants.blackColor,
-                        ),
-                        Text("Profile")
+                          color: _selectedPageIndex==2?DataConstants.blueColor:DataConstants.blackColor,                        ),
+                        Text("Profile",style: TextStyle(color: _selectedPageIndex==2?DataConstants.blueColor:DataConstants.blackColor,),),
                       ],
                     ),
                   ),

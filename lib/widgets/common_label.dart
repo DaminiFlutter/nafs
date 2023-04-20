@@ -13,8 +13,7 @@ class CommonLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      overflow: TextOverflow.visible,
-      maxLines: 2,
+      maxLines: 6,
       softWrap: true,
       style: DataConstants.commonTextStyle(
           weight: weight,

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nafs/screens/home/appointment.dart';
 import 'package:sizer/sizer.dart';
 import '../../constants/dataconstants.dart';
 import '../../widgets/common_header.dart';
@@ -106,25 +107,30 @@ class _ListOfTherapistState extends State<ListOfTherapist> {
                                         ),
                                         Row(
                                           children: [
-                                            Container(
-                                              width: 15.w,
-                                              height: 3.h,
-                                              decoration: BoxDecoration(
-                                                  color:
-                                                      DataConstants.blueColor,
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(20))),
-                                              child: Center(
-                                                child: Text(
-                                                  "Book",
-                                                  style: DataConstants
-                                                      .commonTextStyle(
-                                                          weight:
-                                                              FontWeight.w600,
-                                                          fontSize: 11,
-                                                          color: DataConstants
-                                                              .whiteColor),
+                                            GestureDetector(
+                                              onTap:(){
+                                                Get.to(Appointment());
+                                              },
+                                              child: Container(
+                                                width: 15.w,
+                                                height: 3.h,
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        DataConstants.blueColor,
+                                                    borderRadius:
+                                                        BorderRadius.all(
+                                                            Radius.circular(20))),
+                                                child: Center(
+                                                  child: Text(
+                                                    "Book",
+                                                    style: DataConstants
+                                                        .commonTextStyle(
+                                                            weight:
+                                                                FontWeight.w600,
+                                                            fontSize: 11,
+                                                            color: DataConstants
+                                                                .whiteColor),
+                                                  ),
                                                 ),
                                               ),
                                             ),

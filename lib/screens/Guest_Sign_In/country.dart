@@ -128,13 +128,10 @@ class _CountryScreenState extends State<CountryScreen> {
                                           itemBuilder: (context, index) {
                                             return GestureDetector(
                                               onTap: () {
-
-                                                  selectedIndex = index;
-                                                  selectedName =
-                                                      _countries[index];
-                                                setState(() {
-
-                                                });
+                                                selectedIndex = index;
+                                                selectedName =
+                                                    _countries[index];
+                                                setState(() {});
                                                 Navigator.of(context).pop();
                                               },
                                               child: Padding(
@@ -158,34 +155,43 @@ class _CountryScreenState extends State<CountryScreen> {
                                                                   0.3)),
                                                   child: Row(
                                                     mainAxisAlignment:
-                                                        MainAxisAlignment.start,
+                                                        MainAxisAlignment
+                                                            .spaceAround,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
                                                     children: [
-                                                      SizedBox(
-                                                        width: 40.w,
+                                                     Column(),
+                                                      Column(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .center,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .center,
+                                                        children: [
+                                                          Text(
+                                                            _countries[index],
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            style: DataConstants
+                                                                .commonTextStyle(
+                                                                    weight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                    fontSize:
+                                                                        16,
+                                                                    color: DataConstants
+                                                                        .blackColor),
+                                                          ),
+                                                        ],
                                                       ),
                                                       Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .center,
-                                                        children: [
-                                                          Center(
-                                                            child: Text(
-                                                              _countries[index],
-                                                              style: DataConstants.commonTextStyle(
-                                                                  weight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                  fontSize: 16,
-                                                                  color: DataConstants
-                                                                      .blackColor),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      Spacer(),
-                                                      Column(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
                                                                 .center,
                                                         children: [
                                                           selectedIndex == index
@@ -194,9 +200,6 @@ class _CountryScreenState extends State<CountryScreen> {
                                                               : SizedBox
                                                                   .shrink(),
                                                         ],
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10.w,
                                                       ),
                                                     ],
                                                   ),
