@@ -18,30 +18,10 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     ItemModel("All", DataConstants.bgGreyColor, true),
     ItemModel("Top Rated", DataConstants.bgGreyColor, false),
     ItemModel("Experienced", DataConstants.bgGreyColor, false),
-    ItemModel("Most", DataConstants.bgGreyColor, false),
+    ItemModel("Most liked", DataConstants.bgGreyColor, false),
+    ItemModel("Most liked", DataConstants.bgGreyColor, false),
   ];
 
-  List<Widget> filterChipsList() {
-    List<Widget> chips = [];
-    for (int i = 0; i < _chipsList.length; i++) {
-      Widget item = Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-        child: FilterChip(
-          label: Text(_chipsList[i].label),
-          labelStyle: const TextStyle(color: Colors.white, fontSize: 16),
-          backgroundColor: DataConstants.blueColor,
-          selected: _chipsList[i].isSelected,
-          onSelected: (bool value) {
-            setState(() {
-              _chipsList[i].isSelected = value;
-            });
-          },
-        ),
-      );
-      chips.add(item);
-    }
-    return chips;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,51 +44,53 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                   height: 30,
                   child: Row(
                     children: [
-                      ListView.builder(
-                          itemCount: _chipsList.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          physics: AlwaysScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _chipsList[index].isSelected =
-                                      !_chipsList[index].isSelected;
-                                });
-                              },
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 3.0),
-                                child: Container(
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                      color: _chipsList[index].isSelected
-                                          ? DataConstants.blueColor
-                                          : DataConstants.bgGreyColor,
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(20))),
-                                  child: Padding(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 4.w,
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        _chipsList[index].label,
-                                        style: DataConstants.commonTextStyle(
-                                            weight: FontWeight.w600,
-                                            fontSize: 16,
-                                            color: _chipsList[index].isSelected
-                                                ? DataConstants.whiteColor
-                                                : DataConstants
-                                                    .lightBlackColor),
+                      Expanded(
+                        child: ListView.builder(
+                            itemCount: _chipsList.length,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            physics: AlwaysScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    _chipsList[index].isSelected =
+                                        !_chipsList[index].isSelected;
+                                  });
+                                },
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 3.0),
+                                  child: Container(
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        color: _chipsList[index].isSelected
+                                            ? DataConstants.blueColor
+                                            : DataConstants.bgGreyColor,
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20))),
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 4.w,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          _chipsList[index].label,
+                                          style: DataConstants.commonTextStyle(
+                                              weight: FontWeight.w600,
+                                              fontSize: 16,
+                                              color: _chipsList[index].isSelected
+                                                  ? DataConstants.whiteColor
+                                                  : DataConstants
+                                                      .lightBlackColor),
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            );
-                          }),
+                              );
+                            }),
+                      ),
                     ],
                   ),
                 ),

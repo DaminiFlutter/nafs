@@ -100,7 +100,7 @@ class _SignUpState extends State<SignUp> {
                               weight: FontWeight.w500,
                               height: 0,
                               fontSize: DataConstants.thirteen,
-                              color: Colors.cyan.shade300),
+                              color: DataConstants.blueColor),
                         ),
                       ],
                     ),

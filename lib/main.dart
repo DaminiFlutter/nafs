@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return Sizer(builder:
         (BuildContext context, Orientation orientation, DeviceType deviceType) {
       return GetMaterialApp(
-        home: CountryScreen(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner: false,
         title: 'NAFS',
         theme: ThemeData(

@@ -102,7 +102,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
                               weight: FontWeight.w500,
                               height: 3,
                               fontSize: DataConstants.thirteen,
-                              color: Colors.cyan.shade300),
+                              color: DataConstants.blueColor),
                         ),
                       ],
                     ),

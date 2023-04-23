@@ -88,7 +88,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                               weight: FontWeight.w500,
                               height: 3,
                               fontSize: DataConstants.thirteen,
-                              color: Colors.cyan.shade300),
+                              color: DataConstants.blueColor),
                         ),
                       ],
                     ),

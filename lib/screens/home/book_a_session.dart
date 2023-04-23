@@ -18,10 +18,11 @@ class BookSession extends StatefulWidget {
 }
 
 class _BookSessionState extends State<BookSession> {
+  int selectedIndex = 0;
+
   final Map<DateTime, List<CleanCalendarEvent>> _events = {
     DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day): [
       CleanCalendarEvent('Event A',
-
           startTime: DateTime(DateTime.now().year, DateTime.now().month,
               DateTime.now().day, 10, 0),
           endTime: DateTime(DateTime.now().year, DateTime.now().month,
@@ -30,7 +31,7 @@ class _BookSessionState extends State<BookSession> {
           color: Colors.blue),
     ],
     DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 2):
-    [
+        [
       CleanCalendarEvent('Event B',
           startTime: DateTime(DateTime.now().year, DateTime.now().month,
               DateTime.now().day + 2, 10, 0),
@@ -45,7 +46,7 @@ class _BookSessionState extends State<BookSession> {
           color: Colors.pink),
     ],
     DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day + 3):
-    [
+        [
       CleanCalendarEvent('Event B',
           startTime: DateTime(DateTime.now().year, DateTime.now().month,
               DateTime.now().day + 2, 10, 0),
@@ -100,12 +101,21 @@ class _BookSessionState extends State<BookSession> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-              Center(child: CommonLabel(text: "Book a session", size: 21, color: DataConstants.blackColor, weight: FontWeight.w600)),
+              Center(
+                  child: CommonLabel(
+                      text: "Book a session",
+                      size: 21,
+                      color: DataConstants.blackColor,
+                      weight: FontWeight.w600)),
               SizedBox(
                 height: 1.h,
               ),
-              Center(child: CommonLabel(text: "Choose the date and time", size: 18, color: DataConstants.blackColor, weight: FontWeight.w600)),
+              Center(
+                  child: CommonLabel(
+                      text: "Choose the date and time",
+                      size: 18,
+                      color: DataConstants.blackColor,
+                      weight: FontWeight.w600)),
               SizedBox(
                 height: 2.h,
               ),
@@ -137,7 +147,11 @@ class _BookSessionState extends State<BookSession> {
               SizedBox(
                 height: 1.h,
               ),
-              CommonLabel(text: "Available Time Slots", size: 18, color: DataConstants.lightBlackColor, weight: FontWeight.w600),
+              CommonLabel(
+                  text: "Available Time Slots",
+                  size: 18,
+                  color: DataConstants.lightBlackColor,
+                  weight: FontWeight.w600),
               SizedBox(
                 height: 1.h,
               ),
@@ -147,21 +161,174 @@ class _BookSessionState extends State<BookSession> {
                   spacing: 10,
                   runSpacing: 10,
                   children: [
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "09:00 AM",),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "10:00 AM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "11:00 AM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "12:00 PM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "01:00 PM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "02:00 PM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "03:00 PM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "04:00 PM"),
-                    CommonContainer(radius: 15, bgColor: DataConstants.bgGreyColor, borderColor: DataConstants.lightBlackColor.withOpacity(0.1), text: "05:00 PM"),
+                    GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedIndex = 0;
+                          });
+                        },
+                        child: CommonContainer(
+                          textColor: selectedIndex == 0
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 0
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "09:00 AM",
+                        )),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 1;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 1
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 1
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "10:00 AM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 2;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 2
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 2
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "11:00 AM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 3;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 3
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 3
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "12:00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 4;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 4
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 4
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "01:00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 5;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 5
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 5
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "02:00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 6;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 6
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 6
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "03:00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 7;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 7
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 7
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "04:00 PM"),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedIndex = 8;
+                        });
+                      },
+                      child: CommonContainer(
+                          textColor: selectedIndex == 8
+                              ? DataConstants.whiteColor
+                              : DataConstants.lightBlackColor,
+                          radius: 15,
+                          bgColor: selectedIndex == 8
+                              ? DataConstants.blueColor
+                              : DataConstants.bgGreyColor,
+                          borderColor:
+                              DataConstants.lightBlackColor.withOpacity(0.1),
+                          text: "05:00 PM"),
+                    ),
                   ],
                 ),
               ),
               Spacer(),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Get.to(PaymentScreen());
                 },
                 child: CommonButton(
@@ -174,35 +341,35 @@ class _BookSessionState extends State<BookSession> {
       ),
     );
   }
-  // Widget _buildEventList() {
-  //   return Expanded(
-  //     child: ListView.builder(
-  //       padding: EdgeInsets.all(0.0),
-  //       itemBuilder: (BuildContext context, int index) {
-  //         final CleanCalendarEvent event = _selectedEvents[index];
-  //         final String start =
-  //         DateFormat('HH:mm').format(event.startTime).toString();
-  //         final String end =
-  //         DateFormat('HH:mm').format(event.endTime).toString();
-  //         return ListTile(
-  //           contentPadding:
-  //           EdgeInsets.only(left: 2.0, right: 8.0, top: 2.0, bottom: 2.0),
-  //           leading: Container(
-  //             width: 10.0,
-  //             color: event.color,
-  //           ),
-  //           title: Text(event.summary),
-  //           subtitle:
-  //           event.description.isNotEmpty ? Text(event.description) : null,
-  //           trailing: Column(
-  //             mainAxisAlignment: MainAxisAlignment.center,
-  //             children: [Text(start), Text(end)],
-  //           ),
-  //           onTap: () {},
-  //         );
-  //       },
-  //       itemCount: _selectedEvents.length,
-  //     ),
-  //   );
-  // }
+// Widget _buildEventList() {
+//   return Expanded(
+//     child: ListView.builder(
+//       padding: EdgeInsets.all(0.0),
+//       itemBuilder: (BuildContext context, int index) {
+//         final CleanCalendarEvent event = _selectedEvents[index];
+//         final String start =
+//         DateFormat('HH:mm').format(event.startTime).toString();
+//         final String end =
+//         DateFormat('HH:mm').format(event.endTime).toString();
+//         return ListTile(
+//           contentPadding:
+//           EdgeInsets.only(left: 2.0, right: 8.0, top: 2.0, bottom: 2.0),
+//           leading: Container(
+//             width: 10.0,
+//             color: event.color,
+//           ),
+//           title: Text(event.summary),
+//           subtitle:
+//           event.description.isNotEmpty ? Text(event.description) : null,
+//           trailing: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [Text(start), Text(end)],
+//           ),
+//           onTap: () {},
+//         );
+//       },
+//       itemCount: _selectedEvents.length,
+//     ),
+//   );
+// }
 }

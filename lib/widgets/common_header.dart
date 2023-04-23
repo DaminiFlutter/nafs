@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:get/get.dart';
 import '../constants/dataconstants.dart';
 
 class CommonHeader extends StatelessWidget {
@@ -18,7 +18,11 @@ class CommonHeader extends StatelessWidget {
           showIcon ? MainAxisAlignment.start : MainAxisAlignment.center,
       children: [
         showIcon
-            ? SvgPicture.asset("assets/login/arrow-left.svg")
+            ? GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+                child: SvgPicture.asset("assets/login/arrow-left.svg"))
             : SizedBox.shrink(),
         showIcon
             ? SizedBox(

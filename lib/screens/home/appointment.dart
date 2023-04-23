@@ -15,9 +15,9 @@ class Appointment extends StatefulWidget {
   // final String name;
   // final String desc;
 
-  const Appointment(
-      {Key? key,})
-      : super(key: key);
+  const Appointment({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<Appointment> createState() => _AppointmentState();
@@ -203,6 +203,7 @@ class _AppointmentState extends State<Appointment> {
                   runSpacing: 10,
                   children: [
                     CommonContainer(
+                      textColor: DataConstants.lightBlackColor,
                       radius: 19,
                       bgColor: DataConstants.bgGreyColor,
                       borderColor:
@@ -210,24 +211,28 @@ class _AppointmentState extends State<Appointment> {
                       text: "Stress",
                     ),
                     CommonContainer(
+                        textColor: DataConstants.lightBlackColor,
                         radius: 19,
                         bgColor: DataConstants.bgGreyColor,
                         borderColor:
                             DataConstants.lightBlackColor.withOpacity(0.1),
                         text: "Anxiety"),
                     CommonContainer(
+                        textColor: DataConstants.lightBlackColor,
                         radius: 19,
                         bgColor: DataConstants.bgGreyColor,
                         borderColor:
                             DataConstants.lightBlackColor.withOpacity(0.1),
                         text: "Relationship issue"),
                     CommonContainer(
+                        textColor: DataConstants.lightBlackColor,
                         radius: 19,
                         bgColor: DataConstants.bgGreyColor,
                         borderColor:
                             DataConstants.lightBlackColor.withOpacity(0.1),
                         text: "Trauma and abuse"),
                     CommonContainer(
+                        textColor: DataConstants.lightBlackColor,
                         radius: 19,
                         bgColor: DataConstants.bgGreyColor,
                         borderColor:

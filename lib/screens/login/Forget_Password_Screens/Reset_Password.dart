@@ -89,7 +89,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                               weight: FontWeight.w500,
                               height: 3,
                               fontSize: DataConstants.thirteen,
-                              color: Colors.cyan.shade300),
+                              color: DataConstants.blueColor),
                         ),
                       ],
                     ),

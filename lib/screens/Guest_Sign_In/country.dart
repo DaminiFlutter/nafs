@@ -154,14 +154,12 @@ class _CountryScreenState extends State<CountryScreen> {
                                                               .withOpacity(
                                                                   0.3)),
                                                   child: Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceAround,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .center,
                                                     children: [
-                                                     Column(),
+                                                     SizedBox(width: 40.w,),
+
                                                       Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -186,6 +184,8 @@ class _CountryScreenState extends State<CountryScreen> {
                                                           ),
                                                         ],
                                                       ),
+                                                      SizedBox(width: 30.w,),
+
                                                       Column(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment

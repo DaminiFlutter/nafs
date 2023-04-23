@@ -186,7 +186,7 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
               HeaderOfHomeScreen(),
               SearchWidget(),
               SizedBox(
-                height: 3.h,
+                height: 2.h,
               ),
               CarouselSlider(
                 options: CarouselOptions(
@@ -303,7 +303,7 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
                 }).toList(),
               ),
               SizedBox(
-                height: 3.h,
+                height: 1.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -334,7 +334,7 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
                 ],
               ),
               SizedBox(
-                height: 3.h,
+                height: 2.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -352,7 +352,7 @@ class _HomeBottomScreenState extends State<HomeBottomScreen> {
                 ],
               ),
               SizedBox(
-                height: 3.h,
+                height: 1.h,
               ),
               Expanded(
                 child: ListView.builder(

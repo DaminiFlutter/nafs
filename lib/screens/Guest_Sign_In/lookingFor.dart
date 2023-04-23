@@ -19,7 +19,7 @@ class _LookingForScreenState extends State<LookingForScreen> {
 
     super.initState();
 
-    Future.delayed(Duration(seconds: 2)).then((value) => Get.to(RecommnededTherapist()));
+    Future.delayed(Duration(seconds: 1)).then((value) => Get.to(RecommnededTherapist()));
   }
   @override
   Widget build(BuildContext context) {

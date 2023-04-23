@@ -22,8 +22,6 @@ class _OnboardingState extends State<Onboarding>
     _onboardingScreenOne(),
     _onboardingScreenTwo(),
     _onboardingScreenThree(),
-    _onboardingScreenFour(),
-    _onboardingScreenFive(),
   ];
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 2),
@@ -90,7 +88,7 @@ class _OnboardingState extends State<Onboarding>
                     behavior: HitTestBehavior.opaque,
                     onTap: () {
                       setState(() {
-                        if (_pageIndex == 4) {
+                        if (_pageIndex == 2) {
                           // _pageIndex = 0;
                           Get.to(SignIn());
                         } else {
@@ -196,56 +194,6 @@ class _OnboardingState extends State<Onboarding>
         ),
         Text(
           "As often as you want and whenever\n you like. Communicate with your\n therapist on your own time and at your\n own pace.",
-          textAlign: TextAlign.center,
-          style: DataConstants.commonTextStyle(
-              weight: FontWeight.w500,
-              fontSize: DataConstants.eighteen,
-              color: DataConstants.lightBlackColor),
-        )
-      ],
-    );
-  }
-
-  static Widget _onboardingScreenFour() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        SvgPicture.asset("assets/onboarding/logo.svg"),
-        SvgPicture.asset("assets/onboarding/onboardingFour.svg"),
-        Text(
-          "Help wherever you are",
-          style: DataConstants.commonTextStyle(
-              weight: FontWeight.w600,
-              fontSize: DataConstants.twentyFive,
-              color: DataConstants.blackColor),
-        ),
-        Text(
-          "No driving, parking or sitting in a\n waiting room. Connect with your\n therapist from your home, your office\n or on the road.",
-          textAlign: TextAlign.center,
-          style: DataConstants.commonTextStyle(
-              weight: FontWeight.w500,
-              fontSize: DataConstants.eighteen,
-              color: DataConstants.lightBlackColor),
-        )
-      ],
-    );
-  }
-
-  static Widget _onboardingScreenFive() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        SvgPicture.asset("assets/onboarding/logo.svg"),
-        SvgPicture.asset("assets/onboarding/onboardingFive.svg"),
-        Text(
-          "Help that you can afford",
-          style: DataConstants.commonTextStyle(
-              weight: FontWeight.w600,
-              fontSize: DataConstants.twentyFive,
-              color: DataConstants.blackColor),
-        ),
-        Text(
-          "Pay a low flat fee from unlimited\n therapy with your therapist. Therapy\n doesn’t have to be expensive.",
           textAlign: TextAlign.center,
           style: DataConstants.commonTextStyle(
               weight: FontWeight.w500,
